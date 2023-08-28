@@ -1,0 +1,66 @@
+When recording:
+   RECORD keyword, plus a file name, are required.
+   no other args results in whatever your device defaults to.
+
+   SECONDS will terminate the recording after specified seconds.
+   You can also stop recording with [BREAK] or [CTRL-C].
+
+   CHANNELS will default to your devices available number of channels.
+   If CHANNELS specifies less than the available channels, only the 
+   first CHANNELS number of audio channels will be recorded.
+
+   RATE will default to the default sample rate of your device.
+   If specified, RATE will be the available sample rate closest to your 
+   request.
+
+xx   WIDTH defaults to the native sample width of your device (in bits).
+   If specified the software will adjust the samples to your requested
+   sample width.
+
+   METER will display the recording levels to the named VU meters.
+   The user is responsible for opening the meter display if desired.
+
+   ALTERNATE is a USB device option that may allow different bandwidth
+   requirements. 1 is usually valid, more may be available.
+
+
+When monitoring:
+   Just like recording, except no filename required, and no file will 
+   be created. Useful for checking audio levels before recording begins.
+
+   METER will display the recording levels to the named VU meters.
+   The user is responsible for opening the meter display if desired.
+
+
+When Playing:
+   PLAY keyword, plus a file name, are required.
+   no other args results in whatever your audio file specifies.
+
+   SECONDS will terminate the playback after specified seconds.
+   By default it will play until end of file, [BREAK] or [CTRL_C].
+
+   CHANNELS will default to your audio files available number of channels.
+   If CHANNELS specifies less than the available channels, only the 
+   first CHANNELS number of audio channels will be played.
+   If CHANNELS specifies more than the available channels, the
+   channels will be duplicated to create the desired number of channels.
+
+   RATE will default to the default sample rate of your audio file.
+xx   If specified, the RATE will override the audio file rate.
+   In both cases the rate may be changed to the closest rate available 
+   from your device.
+
+xx   WIDTH defaults to the native sample width of your audio file (in bits),
+   which will be interpolated into the sample width of your playback device.
+
+   METER will display the playback levels to the named VU meters.
+   The user is responsible for opening the meter display if desired.
+
+
+
+in ALL CASES, this software only supports USB_AUDIO_VERSION_2 devices.
+This is NOT the same as the USB version, instead it specifies the audio
+implementation. Version 1 had a few holes in the spec, making a driver 
+a bit difficult.
+
+
